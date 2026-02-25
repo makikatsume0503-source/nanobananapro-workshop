@@ -40,4 +40,10 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  @keyframes shine {
+    100% {
+      transform: translateX(100%);
+    }
+  }
 }

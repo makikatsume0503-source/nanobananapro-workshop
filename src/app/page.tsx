@@ -83,8 +83,9 @@ export default function NanobananaWorkshopLP() {
                                     <span className="text-xs font-bold tracking-widest opacity-90 relative z-10">90分 5,500円</span>
                                     <span className="text-lg font-bold flex items-center gap-2 relative z-10">
                                         ワークショップに申し込む
-                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </span>
+                                    {/* Shiny overlay animation */}
+                                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shine_1.5s_ease-in-out_infinite] z-20"></div>
                                 </motion.button>
                             </Link>
                         </div>
@@ -463,8 +464,9 @@ export default function NanobananaWorkshopLP() {
                             <span className="text-sm font-bold tracking-widest opacity-90 relative z-10">90分 5,500円</span>
                             <span className="text-xl font-bold flex items-center gap-2 relative z-10">
                                 ワークショップに申し込む
-                                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                             </span>
+                            {/* Shiny overlay animation */}
+                            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent group-hover:animate-[shine_1.5s_ease-in-out_infinite] z-20"></div>
                         </motion.button>
                         <p className="text-sm text-zinc-500 mt-4">※お申し込みフォームへ遷移します（現在はデモ用）</p>
                     </motion.div>
