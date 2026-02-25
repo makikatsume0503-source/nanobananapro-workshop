@@ -429,7 +429,7 @@ export default function NanobananaWorkshopLP() {
                                 <Calendar className="w-6 h-6 text-[#FF8E8B] shrink-0 mt-1" />
                                 <div>
                                     <h4 className="font-bold text-zinc-900">開催日時</h4>
-                                    <p className="text-zinc-600">2026年3月〇〇日 (金) 10:30 - 12:00（予定）</p>
+                                    <p className="text-zinc-600">2026年3月〇〇日 (金) 10:00 - 11:30（予定）</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
@@ -478,7 +478,7 @@ export default function NanobananaWorkshopLP() {
                         <Link href="/privacy-policy" className="hover:text-gray-900 transition-colors">プライバシーポリシー</Link>
                         <Link href="/tokushoho" className="hover:text-gray-900 transition-colors">特定商取引法に基づく表記</Link>
                     </div>
-                    <p className="mb-4">© 2026 FinEdit Maki Katsume®. All rights reserved.</p>
+                    <p className="mb-4">© 2026 勝目麻希. All rights reserved.</p>
                 </div>
             </footer>
         </div>

@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
 
                     <div className="pt-6 border-t border-zinc-100 text-zinc-500 text-sm">
                         制定日: 2026年2月25日<br />
-                        FinEdit Maki Katsume®<br />
+                        勝目麻希<br />
                         代表: 勝目 麻希
                     </div>
                 </div>

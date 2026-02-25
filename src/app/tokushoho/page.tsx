@@ -13,7 +13,7 @@ export default function Tokushoho() {
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-zinc-100 space-y-6">
                     <section className="grid grid-cols-1 md:grid-cols-4 gap-4 border-b pb-6">
                         <h2 className="font-bold text-zinc-900 md:col-span-1">販売事業者名</h2>
-                        <p className="text-zinc-600 md:col-span-3">FinEdit Maki Katsume®</p>
+                        <p className="text-zinc-600 md:col-span-3">勝目麻希</p>
                     </section>
 
                     <section className="grid grid-cols-1 md:grid-cols-4 gap-4 border-b pb-6">
