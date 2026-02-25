@@ -1,297 +1,507 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, CheckCircle } from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+    Sparkles,
+    ArrowRight,
+    CheckCircle,
+    Image as ImageIcon,
+    Wand2,
+    Calendar,
+    Clock,
+    MonitorPlay,
+    Users,
+    Heart,
+    Palette,
+    FileText,
+    SquareLibrary,
+    ClipboardList,
+    Store,
+    BookOpen
+} from 'lucide-react';
+import Link from 'next/link';
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-[var(--color-background-dark)] text-[var(--color-text-primary)]">
-      {/* Navigation */}
-      <nav className="fixed w-full z-50 glass-panel border-b border-[var(--color-gold)]/20 py-4 px-6 md:px-12 flex justify-between items-center transition-all duration-300">
-        <div className="text-xl font-bold tracking-wider gold-gradient-text">MAKI KATSUME</div>
-        <div className="hidden md:flex space-x-8 text-sm font-medium">
-          <a href="#about" className="hover:text-[var(--color-gold)] transition-colors">ABOUT</a>
-          <a href="#services" className="hover:text-[var(--color-gold)] transition-colors">SERVICES</a>
-          <a href="#works" className="hover:text-[var(--color-gold)] transition-colors">WORKS</a>
-          <a href="#contact" className="hover:text-[var(--color-gold)] transition-colors">CONTACT</a>
-        </div>
-        <a href="#contact" className="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-medium border border-[var(--color-gold)] text-[var(--color-gold)] rounded-full hover:bg-[var(--color-gold)] hover:text-[var(--color-navy)] transition-all duration-300">
-          お問い合わせ
-        </a>
-      </nav>
+const fadeIn = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+};
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        {/* Abstract Background Shapes */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-          <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] rounded-full bg-[var(--color-navy-light)]/20 blur-[100px]" />
-          <div className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] rounded-full bg-[var(--color-gold)]/10 blur-[120px]" />
-        </div>
+const staggerContainer = {
+    animate: {
+        transition: {
+            staggerChildren: 0.2
+        }
+    }
+};
 
-        <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center">
-          <div className="w-full md:w-1/2 text-center md:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-[var(--color-gold)] text-sm md:text-base font-medium tracking-[0.2em] mb-4 uppercase">
-                Freelance Writer / AI Utilization Instructor
-              </h2>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                言葉と<span className="gold-gradient-text">金融の専門知識</span>で、<br className="hidden md:block" />
-                あなたのビジネスを<br className="hidden md:block" />次のステージへ。
-              </h1>
-              <p className="text-[var(--color-text-secondary)] text-lg mb-10 max-w-xl mx-auto md:mx-0">
-                元メガバンク出身の確かなリスク管理とプロライターの「言語化」スキルを武器に、企業の課題解決とAI導入を支援します。
-              </p>
+export default function NanobananaWorkshopLP() {
+    return (
+        <div className="min-h-screen bg-[#FFFDFB] text-zinc-800 font-sans selection:bg-[#FF8E8B] selection:text-white">
 
-              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                <a href="#services" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[var(--color-gold)] to-[var(--color-gold-light)] text-[var(--color-navy)] font-bold rounded-full hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all flex items-center justify-center">
-                  サービスを見る
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-                <a href="#about" className="w-full sm:w-auto px-8 py-4 glass-panel text-[var(--color-text-primary)] font-medium rounded-full hover:bg-[var(--color-navy-light)]/50 transition-all flex items-center justify-center">
-                  プロフィール
-                </a>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="w-full md:w-1/2 mt-16 md:mt-0 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative w-full max-w-md mx-auto aspect-[4/5] rounded-2xl overflow-hidden glass-panel border border-[var(--color-gold)]/30 p-2"
-            >
-              {/* プレースホルダー：実際には勝目氏のポートレート画像を配置 */}
-              <div className="w-full h-full bg-gradient-to-br from-[var(--color-navy-light)] to-[var(--color-navy)] rounded-xl flex items-center justify-center border border-[var(--color-text-secondary)]/20">
-                <span className="text-[var(--color-text-secondary)] text-lg gold-gradient-text">Portrait Image Placeholder</span>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-          <a href="#about" className="text-[var(--color-text-secondary)] hover:text-[var(--color-gold)] transition-colors">
-            <ChevronDown className="w-8 h-8" />
-          </a>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-24 bg-[var(--color-navy)]/30 relative">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">ABOUT <span className="gold-gradient-text">ME</span></h2>
-            <div className="w-16 h-1 bg-[var(--color-gold)] mx-auto rounded-full"></div>
-          </div>
-
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-5/12">
-              <div className="relative aspect-square max-w-sm mx-auto rounded-full overflow-hidden border-4 border-[var(--color-gold)]/20 p-2">
-                <div className="w-full h-full rounded-full bg-[var(--color-navy-light)] flex items-center justify-center">
-                  <span className="text-[var(--color-text-secondary)]">Profile Image</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full md:w-7/12">
-              <h3 className="text-2xl font-bold mb-2">勝目 麻希 <span className="text-[var(--color-text-secondary)] text-lg font-normal ml-2">Maki Katsume</span></h3>
-              <p className="text-[var(--color-gold)] font-medium mb-6">フリーランスライター / 2級FP技能士 / AI活用インストラクター</p>
-
-              <div className="text-[var(--color-text-secondary)] space-y-4 mb-8 leading-relaxed">
-                <p>
-                  愛知県名古屋市在住・岐阜県出身。<br />
-                  新卒で三菱UFJ銀行に総合職として入行し、中小企業〜大企業向けの融資や金融商品の販売などを経験。その後、商社への転職・結婚・出産を経て、2018年4月よりフリーランスのライターとして活動を開始しました。
-                </p>
-                <p>
-                  現在は、金融機関（銀行・証券会社・保険会社）、クレジットカード会社、ファクタリング会社や経済・ビジネス系メディアのコンテンツ作成をメインに、メールマガジン・SNS代行、広報サポートなども行なっています。
-                </p>
-                <p>
-                  さらに、自身の経験を活かしたライター育成やフリーランス女性の支援、そして「FinEdit」として中小企業向けのAI導入支援やライター向けAIライティング講座の講師など、AI活用インストラクターとしても幅広く活動しています。
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  "金融・経済専門ライティング",
-                  "メールマガジン・SNS運用代行",
-                  "広報・PRサポート",
-                  "AI導入・活用コンサルティング",
-                  "AIライティング実践講座",
-                  "FP2級技能士資格保有"
-                ].map((skill, index) => (
-                  <div key={index} className="flex items-center text-sm font-medium">
-                    <CheckCircle className="w-5 h-5 text-[var(--color-gold)] mr-2 flex-shrink-0" />
-                    <span>{skill}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-24 relative">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">OUR <span className="gold-gradient-text">SERVICES</span></h2>
-            <div className="w-16 h-1 bg-[var(--color-gold)] mx-auto rounded-full"></div>
-            <p className="mt-6 text-[var(--color-text-secondary)] max-w-2xl mx-auto">金融とITの力で、あなたのビジネス課題を言葉にして解決へと導きます。</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Service 1 */}
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="glass-panel p-8 rounded-2xl group transition-all"
-            >
-              <div className="w-14 h-14 rounded-full bg-[var(--color-navy-light)] flex items-center justify-center mb-6 group-hover:bg-[var(--color-gold)]/20 transition-colors">
-                <span className="text-2xl font-bold text-[var(--color-gold)]">01</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">記事制作／編集・PR</h3>
-              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-6">
-                金融機関や経済メディア向けのSEOコラム、インタビュー、プレスリリース作成。専門的な内容も読者にわかりやすく翻訳し、ブランド価値を高めるコンテンツを制作します。
-              </p>
-              <ul className="text-sm space-y-2 text-[var(--color-text-primary)]">
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> SEO記事・コラム執筆</li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> インタビュー・事例作成</li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> プレスリリース・広報資料</li>
-              </ul>
-            </motion.div>
-
-            {/* Service 2 */}
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="glass-panel p-8 rounded-2xl group transition-all"
-            >
-              <div className="w-14 h-14 rounded-full bg-[var(--color-navy-light)] flex items-center justify-center mb-6 group-hover:bg-[var(--color-gold)]/20 transition-colors">
-                <span className="text-2xl font-bold text-[var(--color-gold)]">02</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">AI導入コンサルティング<br /><span className="text-sm font-normal text-[var(--color-gold)]">by FinEdit</span></h3>
-              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-6">
-                中小企業を対象としたAI導入支援。業務フローの可視化から、プロンプトエンジニアリングを活用した実務の効率化まで伴走型でサポートします。
-              </p>
-              <ul className="text-sm space-y-2 text-[var(--color-text-primary)]">
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> 業務フローの診断・AI化提案</li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> 社内研修・ワークショップ</li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> 業務アプリ・HPの作成支援</li>
-              </ul>
-            </motion.div>
-
-            {/* Service 3 */}
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="glass-panel p-8 rounded-2xl group transition-all"
-            >
-              <div className="w-14 h-14 rounded-full bg-[var(--color-navy-light)] flex items-center justify-center mb-6 group-hover:bg-[var(--color-gold)]/20 transition-colors">
-                <span className="text-2xl font-bold text-[var(--color-gold)]">03</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">教育・コミュニティ運営</h3>
-              <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed mb-6">
-                培ってきたライティング技術とAI活用スキルを独自のカリキュラムで提供。東海エリアを中心としたライターコミュニティの運営も行っています。
-              </p>
-              <ul className="text-sm space-y-2 text-[var(--color-text-primary)]">
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> AIライティング実践講座</li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> 女性ライター育成・支援</li>
-                <li className="flex items-start"><CheckCircle className="w-4 h-4 text-[var(--color-gold)] mr-2 mt-0.5" /> 東海ライターチーム運営</li>
-              </ul>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Works & Track Record Section */}
-      <section id="works" className="py-24 bg-[var(--color-navy)]/30 relative">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">WORKS & <span className="gold-gradient-text">TRACK RECORD</span></h2>
-            <div className="w-16 h-1 bg-[var(--color-gold)] mx-auto rounded-full"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-bold mb-6 flex items-center border-b border-[var(--color-gold)]/20 pb-4">
-                <span className="w-2 h-8 bg-[var(--color-gold)] mr-3"></span>
-                執筆・制作実績
-              </h3>
-              <ul className="space-y-4 text-[var(--color-text-secondary)]">
-                <li className="glass-panel p-4 rounded-lg">三菱UFJ銀行様（金融コラム）</li>
-                <li className="glass-panel p-4 rounded-lg">幻冬舎ゴールドオンライン様（SEO記事・コラム）</li>
-                <li className="glass-panel p-4 rounded-lg">Yahoo!ニュース掲載記事（月間90万PV／総合ランキング1位獲得）</li>
-                <li className="glass-panel p-4 rounded-lg">大手金融機関・外資系資産運用会社・税理士法人（非公開多数）</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold mb-6 flex items-center border-b border-[var(--color-gold)]/20 pb-4">
-                <span className="w-2 h-8 bg-[var(--color-gold)] mr-3"></span>
-                登壇・活動実績
-              </h3>
-              <div className="space-y-6 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-[var(--color-gold)]/30 before:to-transparent">
-                <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-[var(--color-gold)] bg-[var(--color-background-dark)] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 ml-0 md:ml-0 z-10"></div>
-                  <div className="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] glass-panel p-4 rounded-lg border border-[var(--color-gold)]/10 ml-4 md:ml-0">
-                    <div className="text-[var(--color-gold)] font-bold text-sm mb-1">2026年 2月</div>
-                    <div className="text-sm">学び舎mom株式会社主催「集中伴走ワークショップ」 女性起業家・経営者向けDX・AI活用講座 メイン講師</div>
-                  </div>
+            {/* 1. Hero Section */}
+            <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+                <div className="absolute inset-0 z-0 opacity-10">
+                    <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-[#FF8E8B] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+                    <div className="absolute top-[20%] left-[-10%] w-72 h-72 bg-zinc-900 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
                 </div>
 
-                <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-[var(--color-navy-light)] bg-[var(--color-background-dark)] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 ml-0 md:ml-0 z-10"></div>
-                  <div className="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] glass-panel p-4 rounded-lg border border-[var(--color-navy-light)] ml-4 md:ml-0">
-                    <div className="text-[var(--color-text-secondary)] font-bold text-sm mb-1">2025年 6月</div>
-                    <div className="text-sm text-[var(--color-text-secondary)]">フリーランス女性のコミュニティHuntersで登壇</div>
-                  </div>
+                <div className="container mx-auto px-4 relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center max-w-4xl mx-auto"
+                    >
+                        <div className="inline-block mb-4 px-6 py-2 rounded-full bg-white shadow-sm border border-[#FF8E8B]/30">
+                            <span className="text-sm font-semibold tracking-wider text-[#E07673] uppercase flex items-center gap-2">
+                                <Sparkles className="w-4 h-4" />
+                                ママのためのAI活用実践講座
+                            </span>
+                        </div>
+                        <h1 className="text-[18px] sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 text-zinc-900 tracking-tight">
+                            <span className="whitespace-nowrap relative z-10 inline-block">
+                                <span className="absolute -bottom-1 left-0 w-full h-3 sm:h-4 bg-[#FF8E8B]/30 -z-10 rounded-full transform -skew-x-12"></span>
+                                AIで子どもの知的好奇心を引き出す！
+                            </span><br />
+                            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl mt-4 block">
+                                我が子専用の<br />オリジナル教材作成ワークショップ
+                            </span>
+                        </h1>
+                        <p className="text-lg md:text-xl text-zinc-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+                            最新の画像生成AIを使って、<br />世界に一つだけのオリジナル教材を作りませんか？
+                        </p>
+
+                        <div className="flex justify-center mt-4">
+                            <Link href="#apply">
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="bg-yellow-400 text-yellow-950 px-8 py-3 rounded-full border border-yellow-500 shadow-md hover:bg-yellow-300 hover:shadow-lg transition-all flex flex-col items-center justify-center gap-0.5 group relative overflow-hidden"
+                                >
+                                    <span className="text-xs font-bold tracking-widest opacity-90 relative z-10">90分 5,500円</span>
+                                    <span className="text-lg font-bold flex items-center gap-2 relative z-10">
+                                        ワークショップに申し込む
+                                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                    </span>
+                                </motion.button>
+                            </Link>
+                        </div>
+                    </motion.div>
                 </div>
+            </section>
 
-                <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-5 h-5 rounded-full border-2 border-[var(--color-navy-light)] bg-[var(--color-background-dark)] shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 ml-0 md:ml-0 z-10"></div>
-                  <div className="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] glass-panel p-4 rounded-lg border border-[var(--color-navy-light)] ml-4 md:ml-0">
-                    <div className="text-[var(--color-text-secondary)] font-bold text-sm mb-1">2025年 3月</div>
-                    <div className="text-sm text-[var(--color-text-secondary)]">南山大学「英語ピッチ大会」メンターとしてサポート</div>
-                  </div>
+            {/* Hero Image Area */}
+            <section className="pb-20 -mt-10 relative z-10 container mx-auto px-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white aspect-video relative flex items-center justify-center group"
+                >
+                    {/* Using generated high-quality image of 4 Japanese women interacting at a laptop */}
+                    <img
+                        src="/stylish_moms_workshop.png"
+                        alt="上品なママたちがパソコンを見ながら楽しく話している様子"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {/* Subtle elegant overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/40 via-transparent to-transparent"></div>
+                </motion.div>
+            </section>
+
+            {/* 2. Pain Points */}
+            <section id="about" className="py-20 bg-white">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <motion.div
+                        variants={fadeIn}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">こんなお悩み、ありませんか？</h2>
+                        <div className="w-20 h-1 bg-[#FF8E8B] mx-auto rounded-full"></div>
+                    </motion.div>
+
+                    <motion.div
+                        variants={staggerContainer}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    >
+                        {[
+                            "市販のドリルや絵本だと、子どもの食いつきがイマイチ…",
+                            "子どもの興味（車、恐竜、お姫様など）に特化した教材が見つからない",
+                            "手作りしたいけど、絵を描く時間もスキルもない",
+                            "AIツールに興味はあるけれど、難しそうで手が出ない",
+                            "スマホやPCでサクッと作れるクリエイティブな趣味が欲しい"
+                        ].map((pain, index) => (
+                            <motion.div
+                                key={index}
+                                variants={fadeIn}
+                                className="bg-[#FFFDFB] rounded-2xl p-6 flex items-start gap-4 border border-zinc-100 shadow-sm"
+                            >
+                                <div className="bg-rose-50 p-2 rounded-full text-[#FF8E8B] shrink-0 mt-1">
+                                    <Heart className="w-5 h-5" />
+                                </div>
+                                <p className="text-zinc-700 leading-relaxed font-medium pt-1">{pain}</p>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
-              </div>
-            </div>
-          </div>
+            </section>
+
+            {/* 3. Solution (What is nanobananapro) */}
+            <section className="py-24 bg-gray-100 text-gray-900 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="lg:w-1/2"
+                        >
+                            <span className="text-[#E07673] font-semibold tracking-wider uppercase mb-2 block">The Solution</span>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight text-gray-900">
+                                「Nano Banana Pro」なら<br />
+                                そのお悩みをサクッと解決できます
+                            </h2>
+                            <p className="text-gray-600 mb-6 leading-relaxed">
+                                Nano Banana Proは、Googleが開発した最新の高品質AI画像生成ツールです。
+                                専門的な知識は不要。簡単な言葉（プロンプト）を入力するだけで、驚くほど美しいイラストや画像を数秒で生成します。
+                            </p>
+                            <ul className="space-y-4">
+                                {[
+                                    "高品質なイラストを数秒で思いのままに生成",
+                                    "お子さんの好きなキャラクター・オリジナルキャラクターで教材作成が可能",
+                                    "画像の中に自然な日本語や英語の文字を入れられる",
+                                ].map((feature, idx) => (
+                                    <li key={idx} className="flex items-start gap-3">
+                                        <CheckCircle className="w-6 h-6 text-[#FF8E8B] shrink-0" />
+                                        <span className="text-gray-700">{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="lg:w-1/2 w-full aspect-square bg-white rounded-3xl p-6 border border-gray-200 relative shadow-xl"
+                        >
+                            {/* Abstract Representation of AI Image Gen */}
+                            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 flex flex-col items-center justify-center p-8 text-center overflow-hidden relative">
+                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#FF8E8B] rounded-full filter blur-[60px] opacity-10"></div>
+                                <Wand2 className="w-16 h-16 text-[#FF8E8B] mb-6 relative z-10" />
+                                <h3 className="text-xl font-bold mb-2 relative z-10 text-gray-900">魔法のキャンバス</h3>
+                                <p className="text-sm text-gray-500 relative z-10 font-medium">「文章題が苦手な息子のために、ポケモンのキャラクターを使ったさんすうの足し算のワークシートを作って！」</p>
+                                <div className="mt-8 px-6 py-2 bg-white rounded-full border border-gray-200 shadow-sm text-[#FF8E8B] text-sm animate-pulse relative z-10 font-bold tracking-wider">
+                                    Generating worksheet...
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 3. 8 Kinds of Materials (New Section) */}
+            <section className="py-24 bg-rose-50/50">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <motion.div
+                        variants={fadeIn}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <span className="text-[#E07673] font-semibold tracking-wider uppercase mb-2 block">Create in 90 Minutes</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">90分で作れる6種類の教材</h2>
+                        <div className="w-20 h-1 bg-[#FF8E8B] mx-auto rounded-full mb-8"></div>
+                        <p className="text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+                            Nano Banana Proは、テキストを入力するだけで高品質なイラストや教育素材を生成できるGoogleのAIツール。
+                            専門知識もデザインスキルも不要。お子さんの年齢や興味に合わせた教材が、数秒で完成します。
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                        {[
+                            { icon: <Palette />, title: "塗り絵", desc: "好きなテーマで何枚でも" },
+                            { icon: <FileText />, title: "ワークシート", desc: "さんすう、こくご、英語など" },
+                            { icon: <SquareLibrary />, title: "フラッシュカード", desc: "ひらがな・数字・英語など" },
+                            { icon: <ClipboardList />, title: "手順説明カード", desc: "歯磨き・手洗いなど生活習慣に" },
+                            { icon: <Store />, title: "お店屋さんごっこセット", desc: "メニュー表・お金・値札" },
+                            { icon: <BookOpen />, title: "ミニ絵本", desc: "オリジナルストーリーを視覚化" },
+                        ].map((item, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="bg-white p-6 rounded-2xl shadow-sm border border-rose-100 flex flex-col items-center text-center hover:shadow-md transition-shadow"
+                            >
+                                <div className="text-[#FF8E8B] mb-4 [&>svg]:w-10 [&>svg]:h-10">{item.icon}</div>
+                                <h3 className="font-bold text-zinc-900 mb-2">{item.title}</h3>
+                                <p className="text-xs text-zinc-500 leading-relaxed">{item.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. Benefits */}
+            <section className="py-24 bg-[#FFFDFB]">
+                <div className="container mx-auto px-4 max-w-6xl">
+                    <motion.div
+                        variants={fadeIn}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <span className="text-[#E07673] font-semibold tracking-wider uppercase mb-2 block">Benefits</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">ワークショップで得られる3つの体験</h2>
+                        <div className="w-20 h-1 bg-[#FF8E8B] mx-auto rounded-full"></div>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                icon: <Palette className="w-8 h-8 text-[#FF8E8B]" />,
+                                title: "AIに指示",
+                                desc: "AIに思い通りの絵を描かせるための、ちょっとしたコツを伝授。初心者でもすぐに素敵なイラストを作れるようになります。"
+                            },
+                            {
+                                icon: <ImageIcon className="w-8 h-8 text-[#FF8E8B]" />,
+                                title: "「マイキャラクター」の作成",
+                                desc: "お子様に似せたオリジナルキャラクターを作り、様々なシチュエーションで活躍させる絵本やフラッシュカードを作ります。"
+                            },
+                            {
+                                icon: <Users className="w-8 h-8 text-[#FF8E8B]" />,
+                                title: "ママ同士のアイデアシェア",
+                                desc: "同じ境遇のママたちと、AIをどう子育てに活かすかアイデアを共有。新しい発見と仲間作りの場になります。"
+                            }
+                        ].map((benefit, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.2 }}
+                                className="bg-white rounded-3xl p-8 shadow-lg shadow-zinc-200/50 border border-zinc-100 hover:-translate-y-2 transition-transform duration-300"
+                            >
+                                <div className="w-16 h-16 bg-rose-50 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-rose-100">
+                                    {benefit.icon}
+                                </div>
+                                <h3 className="text-xl font-bold text-zinc-900 mb-4">{benefit.title}</h3>
+                                <p className="text-zinc-600 leading-relaxed">{benefit.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 5. Curriculum */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <motion.div
+                        variants={fadeIn}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">充実の1時間半カリキュラム</h2>
+                        <div className="w-20 h-1 bg-[#FF8E8B] mx-auto rounded-full"></div>
+                        <p className="mt-6 text-zinc-600">講義と実践（ワーク）を交えた、手を動かして学べる楽しいプログラムです。</p>
+                    </motion.div>
+
+                    <div className="space-y-6">
+                        {[
+                            { time: "0:00 - 0:20", title: "はじめに & Nano Banana Proのキホン", desc: "最新AIの仕組みと、教育にどう活かせるかの事例紹介。" },
+                            { time: "0:20 - 0:50", title: "【実践】プロンプトのコツを掴もう", desc: "実際にスマホ/PCを使って簡単な画像生成にチャレンジ。" },
+                            { time: "0:50 - 1:20", title: "【ワーク】オリジナル教材を作ろう", desc: "お子様の興味に合わせた絵本の1ページや、ひらがな表などを作成。" },
+                            { time: "1:20 - 1:30", title: "作品発表 & 交流会", desc: "作った作品を見せ合いながら、ママ同士でワイワイ交流。" },
+                        ].map((step, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="flex flex-col md:flex-row gap-4 md:gap-8 bg-[#FFFDFB] p-6 pr-8 rounded-2xl border border-zinc-100 relative overflow-hidden transition-colors hover:border-[#FF8E8B]/30"
+                            >
+                                <div className="md:w-32 shrink-0">
+                                    <span className="inline-block px-3 py-1 bg-rose-50 text-[#E07673] rounded-md font-semibold font-mono text-sm border border-rose-100">
+                                        {step.time}
+                                    </span>
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold text-zinc-900 mb-2">{step.title}</h3>
+                                    <p className="text-zinc-600 text-sm md:text-base">{step.desc}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 6. Instructor */}
+            <section className="py-24 bg-[#FFFDFB]">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <motion.div
+                        variants={fadeIn}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{ once: true }}
+                        className="text-center mb-16"
+                    >
+                        <span className="text-[#E07673] font-semibold tracking-wider uppercase mb-2 block">Instructor</span>
+                        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-6">講師紹介</h2>
+                        <div className="w-20 h-1 bg-[#FF8E8B] mx-auto rounded-full"></div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-zinc-100 flex flex-col md:flex-row items-center gap-10"
+                    >
+                        <div className="shrink-0">
+                            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-rose-50 shadow-md">
+                                <img
+                                    src="/profile.jpg"
+                                    alt="Instructor Maki Katsume"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                        <div className="text-center md:text-left">
+                            <h3 className="text-2xl font-bold text-zinc-900 mb-1">勝目 麻希</h3>
+                            <p className="text-[#FF8E8B] font-medium mb-4 tracking-wider">Maki Katsume</p>
+                            <div className="inline-block px-4 py-1 bg-rose-50 text-zinc-700 rounded-full text-sm font-semibold mb-6 border border-rose-100">
+                                ライター・AI活用インストラクター
+                            </div>
+                            <p className="text-zinc-600 leading-relaxed text-sm md:text-base">
+                                「テクノロジーを味方につけて、自由な働き方を」をテーマに活動中。難しく感じるITツールも、女性ならではの感性でわかりやすく伝えます。一緒に新しい一歩を踏み出しましょう。
+                            </p>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Target Audience */}
+            <section className="py-20 bg-gray-100 text-gray-900 border-t border-gray-200">
+                <div className="container mx-auto px-4 max-w-4xl text-center">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-10 text-gray-900">こんな素敵なママたちをお待ちしています！</h2>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {["AIを生活に取り入れたい方", "子どもの好奇心を伸ばしたい方", "新しい学びにワクワクする方"].map((tag, idx) => (
+                            <span key={idx} className="bg-white border border-gray-200 px-6 py-3 rounded-full text-gray-700 font-medium flex items-center gap-2 shadow-sm">
+                                <CheckCircle className="w-5 h-5 text-[#FF8E8B]" />
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 7. Details & CTA */}
+            <section id="apply" className="py-24 bg-[#FFFDFB]">
+                <div className="container mx-auto px-4 max-w-3xl">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-zinc-50 text-center relative overflow-hidden hover:shadow-rose-100/50 transition-shadow duration-500"
+                    >
+                        {/* Top decorative bar */}
+                        <div className="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-zinc-900 via-[#FF8E8B] to-zinc-900"></div>
+
+                        <h2 className="text-3xl font-bold text-zinc-900 mb-8 border-b border-zinc-100 pb-8 mt-2">開催概要・お申し込み</h2>
+
+                        <div className="space-y-6 mb-12 text-left bg-[#FFFDFB] p-8 rounded-2xl border border-zinc-100">
+                            <div className="flex items-start gap-4">
+                                <Calendar className="w-6 h-6 text-[#FF8E8B] shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="font-bold text-zinc-900">開催日時</h4>
+                                    <p className="text-zinc-600">2026年3月〇〇日 (金) 10:30 - 12:00（予定）</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <MapPin className="w-6 h-6 text-[#FF8E8B] shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="font-bold text-zinc-900">開催場所</h4>
+                                    <p className="text-zinc-600">オンライン（Zoomミーティング）</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <MonitorPlay className="w-6 h-6 text-[#FF8E8B] shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="font-bold text-zinc-900">持ち物・準備</h4>
+                                    <p className="text-zinc-600">PCまたはタブレット（スマホでも参加可能ですが、画面が大きい方が操作しやすいです）</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-4">
+                                <Heart className="w-6 h-6 text-[#FF8E8B] shrink-0 mt-1" />
+                                <div>
+                                    <h4 className="font-bold text-zinc-900">参加費</h4>
+                                    <p className="text-zinc-900 text-2xl font-bold mt-1">5,500<span className="text-base font-normal text-zinc-600">円（税込）</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="bg-yellow-400 text-yellow-950 px-12 py-4 rounded-full border border-yellow-500 shadow-md hover:bg-yellow-300 hover:shadow-lg transition-all flex flex-col items-center justify-center gap-0.5 group mx-auto relative overflow-hidden"
+                        >
+                            <span className="text-sm font-bold tracking-widest opacity-90 relative z-10">90分 5,500円</span>
+                            <span className="text-xl font-bold flex items-center gap-2 relative z-10">
+                                ワークショップに申し込む
+                                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                        </motion.button>
+                        <p className="text-sm text-zinc-500 mt-4">※お申し込みフォームへ遷移します（現在はデモ用）</p>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="bg-gray-100 py-12 text-center text-gray-500 border-t border-gray-200">
+                <div className="container mx-auto px-4 flex flex-col items-center">
+                    <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
+                        <Link href="/privacy-policy" className="hover:text-gray-900 transition-colors">プライバシーポリシー</Link>
+                        <Link href="/tokushoho" className="hover:text-gray-900 transition-colors">特定商取引法に基づく表記</Link>
+                    </div>
+                    <p className="mb-4">© 2026 FinEdit Maki Katsume®. All rights reserved.</p>
+                </div>
+            </footer>
         </div>
-      </section>
+    );
+}
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 relative overflow-hidden">
-        {/* Background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-[var(--color-navy-light)]/10 blur-[120px] -z-10" />
-
-        <div className="container mx-auto px-6 md:px-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">CONTACT <span className="gold-gradient-text">US</span></h2>
-          <div className="w-16 h-1 bg-[var(--color-gold)] mx-auto rounded-full mb-10"></div>
-
-          <div className="glass-panel max-w-3xl mx-auto p-8 md:p-12 rounded-2xl">
-            <h3 className="text-2xl font-bold mb-6">お仕事のご依頼・ご相談</h3>
-            <p className="text-[var(--color-text-secondary)] mb-8">
-              記事執筆、広報サポート、AI導入コンサルティング、研修講師のご依頼などお気軽にお問い合わせください。オンラインおよび名古屋エリアでの対面ミーティングも対応可能です。
-            </p>
-            <button className="px-10 py-4 bg-[var(--color-gold)] text-[var(--color-navy)] font-bold rounded-full hover:bg-[var(--color-gold-light)] hover:shadow-[0_0_20px_rgba(212,175,55,0.5)] transition-all transform hover:-translate-y-1">
-              お問い合わせフォームへ進む
-            </button>
-            <p className="text-xs text-[var(--color-text-secondary)] mt-6">
-              ※現在多くのお問い合わせをいただいており、お急ぎのご依頼はお受けできない場合がございます。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-[#05060A] py-10 border-t border-[var(--color-gold)]/10">
-        <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center text-sm text-[var(--color-text-secondary)]">
-          <div className="mb-4 md:mb-0 font-bold tracking-wider gold-gradient-text">MAKI KATSUME</div>
-          <div>&copy; {new Date().getFullYear()} Maki Katsume. All Rights Reserved.</div>
-        </div>
-      </footer>
-    </main>
-  );
+// Temporary icon component since MapPin isn't imported from lucide-react above
+function MapPin(props: any) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+        </svg>
+    );
 }
