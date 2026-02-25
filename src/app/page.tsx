@@ -199,7 +199,7 @@ export default function NanobananaWorkshopLP() {
                                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-[#FF8E8B] rounded-full filter blur-[60px] opacity-10"></div>
                                 <Wand2 className="w-16 h-16 text-[#FF8E8B] mb-6 relative z-10" />
                                 <h3 className="text-xl font-bold mb-2 relative z-10 text-gray-900">魔法のキャンバス</h3>
-                                <p className="text-sm text-gray-500 relative z-10 font-medium">「文章題が苦手な息子のために、ポケモンのキャラクターを使ったさんすうの足し算のワークシートを作って！」</p>
+                                <p className="text-sm text-gray-500 relative z-10 font-medium">「文章題が苦手な息子のために、ポケモンのキャラクターを使った<br />さんすうの足し算のワークシートを作って！」</p>
                                 <div className="mt-8 px-6 py-2 bg-white rounded-full border border-gray-200 shadow-sm text-[#FF8E8B] text-sm animate-pulse relative z-10 font-bold tracking-wider">
                                     Generating worksheet...
                                 </div>
