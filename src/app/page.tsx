@@ -85,7 +85,7 @@ export default function NanobananaWorkshopLP() {
                                         ワークショップに申し込む
                                     </span>
                                     {/* Shiny overlay animation */}
-                                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shine_1.5s_ease-in-out_infinite] z-20"></div>
+                                    <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[shine_3s_ease-in-out_infinite] z-20"></div>
                                 </motion.button>
                             </Link>
                         </div>
