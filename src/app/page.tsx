@@ -38,7 +38,7 @@ const staggerContainer = {
 
 export default function NanobananaWorkshopLP() {
     return (
-        <div className="min-h-screen bg-[#FFFDFB] text-zinc-800 font-sans selection:bg-[#FF8E8B] selection:text-white">
+        <div className="min-h-screen bg-[#FFFDFB] text-zinc-800 font-serif selection:bg-[#FF8E8B] selection:text-white">
 
             {/* 1. Hero Section */}
             <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
@@ -54,12 +54,7 @@ export default function NanobananaWorkshopLP() {
                         transition={{ duration: 0.8 }}
                         className="text-center max-w-4xl mx-auto"
                     >
-                        <div className="inline-block mb-4 px-6 py-2 rounded-full bg-white shadow-sm border border-[#FF8E8B]/30">
-                            <span className="text-sm font-semibold tracking-wider text-[#E07673] uppercase flex items-center gap-2">
-                                <Sparkles className="w-4 h-4" />
-                                ママのためのAI活用実践講座
-                            </span>
-                        </div>
+
                         <h1 className="text-[18px] sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 text-zinc-900 tracking-tight">
                             <span className="whitespace-nowrap relative z-10 inline-block">
                                 <span className="absolute -bottom-1 left-0 w-full h-3 sm:h-4 bg-[#FF8E8B]/30 -z-10 rounded-full transform -skew-x-12"></span>

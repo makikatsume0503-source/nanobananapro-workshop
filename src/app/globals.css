@@ -12,9 +12,11 @@
 
 @layer base {
   body {
-    background-color: var(--color-background-dark);
-    color: var(--color-text-primary);
-    font-family: var(--font-inter), sans-serif;
+    background-color: #FFFDFB;
+    /* Warm off-white */
+    color: #333333;
+    /* Dark gray for readability */
+    font-family: var(--font-noto-serif-jp), serif;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
