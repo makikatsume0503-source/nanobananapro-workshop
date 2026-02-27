@@ -38,7 +38,7 @@ const staggerContainer = {
 
 export default function NanobananaWorkshopLP() {
     return (
-        <div className="min-h-screen bg-[#FFFDFB] text-zinc-800 font-serif selection:bg-[#FF8E8B] selection:text-white">
+        <div className="min-h-screen bg-[#FFFDFB] text-zinc-800 selection:bg-[#FF8E8B] selection:text-white">
 
             {/* 1. Hero Section */}
             <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
