@@ -13,8 +13,11 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "勝目麻希 | フリーランスライター & AI活用インストラクター",
-  description: "元銀行員の豊富な金融・経済知識を活かし、記事制作・PR支援から、中小企業向けAI導入・活用コンサルティングまで幅広くサポートします。",
+  title: "AIでオリジナル教材作成ワークショップ",
+  description: "AIを使ってプログラミング未経験でもオリジナルアプリが作成できるワークショップ。90分であなただけのアプリを完成させましょう！",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
