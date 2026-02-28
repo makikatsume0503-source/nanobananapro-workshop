@@ -56,7 +56,7 @@ export default function NanobananaWorkshopLP() {
                     >
                         <div className="mb-6 inline-block border-b-2 border-rose-100 pb-2">
                             <span className="text-lg font-medium tracking-widest text-[#E07673] serif">
-                                プログラミング未経験でも問題なし!
+                                市販の教材では物足りないママへ
                             </span>
                         </div>
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 text-zinc-900 tracking-tight">
