@@ -58,10 +58,10 @@ export default function NanobananaWorkshopLP() {
                         <h1 className="text-[18px] sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6 text-zinc-900 tracking-tight">
                             <span className="whitespace-nowrap relative z-10 inline-block">
                                 <span className="absolute -bottom-1 left-0 w-full h-3 sm:h-4 bg-[#FF8E8B]/30 -z-10 rounded-full transform -skew-x-12"></span>
-                                AIで子どもの知的好奇心を引き出す！
+                                オリジナル教材作成
                             </span><br />
                             <span className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl mt-4 block">
-                                我が子専用の<br />オリジナル教材作成ワークショップ
+                                ワークショップ
                             </span>
                         </h1>
                         <p className="text-lg md:text-xl text-zinc-600 mb-10 leading-relaxed max-w-2xl mx-auto">

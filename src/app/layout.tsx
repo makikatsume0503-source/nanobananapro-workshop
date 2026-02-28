@@ -19,7 +19,7 @@ const notoSerifJP = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  title: "オリジナルアプリ作成ワークショップ",
+  title: "オリジナル教材作成ワークショップ",
   description: "AIを使ってプログラミング未経験でもオリジナルアプリが作成できるワークショップ。90分であなただけのアプリを完成させましょう！",
   icons: {
     icon: "/favicon.png",
